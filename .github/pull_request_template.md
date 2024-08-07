@@ -3,7 +3,7 @@
 Please include a summary of the changes and the related issues. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
 ## Issue ticket(s)
-- [#<NUMBER>](LINK)
+- #<NUMBER>
 
 ## Type of change
 Please delete options that are not relevant.
