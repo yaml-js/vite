@@ -1,7 +1,8 @@
 name: Publish
 on:
-  tags:
-    - 'v*'
+  push:
+    tags:
+      - v**
 
 jobs:
   build:
@@ -19,3 +20,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
+    - name: Extract tag name
+      id: tag
+      uses: actions/github-script@0.2.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          return context.payload.ref.replace(/\/refs\/tags\//, '');
+    - name: Echo
+      run: echo ${{ steps.tag.outputs.result }}
