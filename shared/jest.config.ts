@@ -11,7 +11,7 @@ module.exports = {
     },
   },
   reporters: [
-    ['jest-junit', { suiteName: '', outputFile: 'build/reports/tests/unit-tests.xml', includeConsoleOutput: 'true' }],
+    ['jest-junit', { suiteName: '', outputFile: 'build/reports/tests/junit.xml', includeConsoleOutput: 'true' }],
     'default',
     [
       '../../node_modules/jest-html-reporter',
