@@ -1,9 +1,8 @@
 name: Build
 on:
   push:
-    branches: [ "*" ]
+    branches: ["**", "!main", "!dev"]
   pull_request:
-    types: [opened, reopened]
     branches: [ "main", "dev" ]
 
 jobs:
