@@ -3,14 +3,19 @@ on:
   push:
     branches: [ "*" ]
   pull_request:
+    types: [opened, reopened]
     branches: [ "main", "dev" ]
 
 jobs:
   build:
+    permissions:
+      pull-requests: write
+
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 22.x ]
+
     steps:
     - name: Enable Corepack
       run: corepack enable
@@ -27,8 +32,6 @@ jobs:
       run: yarn build
     - name: Run unit tests
       run: yarn test
-    - run: echo "event name is:" ${{ github.event_name }}
-    - run: echo "event type is:" ${{ github.event.action }}
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
       if: ${{ github.event_name == 'pull_request' }}
