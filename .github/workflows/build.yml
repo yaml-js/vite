@@ -29,7 +29,7 @@ jobs:
       run: yarn test
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
-      if: github.event_name == 'pull_request'
+      if: ${{ github.event_name == 'pull_request' }}
       with:
         filename: /**/cobertura-coverage.xml
         badge: true
@@ -42,7 +42,7 @@ jobs:
         thresholds: '60 80'
     - name: Add Coverage PR Comment
       uses: marocchino/sticky-pull-request-comment@v2
-      if: github.event_name == 'pull_request'
+      if: ${{ github.event_name == 'pull_request' }}
       with:
         recreate: true
         path: code-coverage-results.md
