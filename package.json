@@ -1,0 +1,27 @@
+{
+  "name": "viteyaml-plugin",
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "yarn@4.4.0",
+  "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8"
+  },
+  "scripts": {
+    "format": "yarn workspaces foreach -Apt run format",
+    "lint": "yarn workspaces foreach -Apt run lint",
+    "build": "yarn workspaces foreach -Apt run build",
+    "test": "yarn workspaces foreach -Apt run test",
+    "check-types": "yarn workspaces foreach -Apt run check-types",
+    "check-publish": "yarn workspaces foreach -Apt run check-publish",
+    "pre-commit": "yarn check-types && yarn test && yarn check-publish && yarn lint-staged"
+  }
+}
