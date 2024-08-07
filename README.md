@@ -1,4 +1,6 @@
 # Vite YAML Plugin
+[![Build](https://github.com/viteyaml/viteyaml-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/viteyaml/viteyaml-plugin/actions/workflows/build.yml)
+
 
 Enhance your Vite-powered projects with seamless YAML integration using the Vite YAML Plugin. This lightweight and efficient plugin empowers developers to utilize YAML files directly within their Vite setups. By transforming YAML content into accessible JavaScript objects, the Vite YAML Plugin simplifies the management and utilization of configuration data, translations, or any structured content stored in YAML format.
 
