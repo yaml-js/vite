@@ -82,6 +82,8 @@ jobs:
         key: ${{ github.sha }}-final
 
   coverage-reports:
+    permissions:
+      pull-requests: write
     needs: [unit-tests]
     if: ${{ github.event_name == 'pull_request' }}
     name: Code Coverage Reports
