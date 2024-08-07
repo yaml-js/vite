@@ -10,6 +10,12 @@ on:
       - '.gitignore'
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'LICENSE'
+      - '.gitignore'
 
 jobs:
   initialize:
@@ -123,3 +129,6 @@ jobs:
       with:
         gist-id: 5a72d5db890cc90ad001b05d6ff71f73
         token: ${{ secrets.GIST_TOKEN }}
+
+
+        https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/pedromvgomes/5a72d5db890cc90ad001b05d6ff71f73/raw/viteyaml-plugin-cobertura-coverage.json
