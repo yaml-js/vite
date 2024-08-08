@@ -1929,7 +1929,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@viteyaml/plugin@workspace:packages/vite-plugin":
+"@viteyaml/plugin@workspace:^, @viteyaml/plugin@workspace:packages/vite-plugin":
   version: 0.0.0-use.local
   resolution: "@viteyaml/plugin@workspace:packages/vite-plugin"
   dependencies:
@@ -6740,6 +6740,7 @@ __metadata:
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-react-swc": "npm:^3.5.0"
+    "@viteyaml/plugin": "workspace:^"
     eslint: "npm:^9.8.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-react-hooks: "npm:^4.6.2"

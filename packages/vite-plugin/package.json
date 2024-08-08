@@ -1,10 +1,8 @@
 {
   "packageManager": "yarn@4.4.0",
-
   "name": "@viteyaml/plugin",
   "version": "0.1.0",
   "type": "module",
-
   "types": "./dist/viteyaml.plugin.d.ts",
   "main": "./dist/viteyaml.plugin.umd.js",
   "module": "./dist/viteyaml.plugin.es.js",
@@ -16,9 +14,11 @@
       "import": "./dist/viteyaml.plugin.es.js",
       "require": "./dist/viteyaml.plugin.umd.js",
       "types": "./dist/viteyaml.plugin.d.ts"
+    },
+    "./yaml": {
+      "types": "./dist/viteyaml.yaml.d.ts"
     }
   },
-
   "scripts": {
     "lint": "eslint -c ../../shared/eslint.config.js",
     "format": "prettier --config ../../shared/prettier.config 'src/**/*.ts' --write",
@@ -26,9 +26,8 @@
     "check-types": "tsc",
     "check-publish": "npm publish --dry-run",
     "publish": "npm publish",
-    "build": "yarn check-types && vite build"
+    "build": "yarn check-types && vite build && cp src/types.d.ts dist/viteyaml.yaml.d.ts"
   },
-
   "devDependencies": {
     "@types/eslint": "^9",
     "@types/jest": "^29.5.12",
