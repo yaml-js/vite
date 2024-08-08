@@ -1,0 +1,49 @@
+{
+  "packageManager": "yarn@4.4.0",
+
+  "name": "@viteyaml/plugin",
+  "version": "0.1.0",
+  "type": "module",
+
+  "types": "./dist/viteyaml.plugin.d.ts",
+  "main": "./dist/viteyaml.plugin.umd.js",
+  "module": "./dist/viteyaml.plugin.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/viteyaml.plugin.es.js",
+      "require": "./dist/viteyaml.plugin.umd.js",
+      "types": "./dist/viteyaml.plugin.d.ts"
+    }
+  },
+
+  "scripts": {
+    "lint": "eslint -c ../../shared/eslint.config.js",
+    "format": "prettier --config ../../shared/prettier.config 'src/**/*.ts' --write",
+    "test": "jest --collect-coverage",
+    "check-types": "tsc",
+    "check-publish": "npm publish --dry-run",
+    "publish": "npm publish",
+    "build": "yarn check-types && vite build"
+  },
+
+  "devDependencies": {
+    "@types/eslint": "^9",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.1.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2",
+    "jest-junit": "^16.0.0",
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^5.3.5",
+    "vite-plugin-dts": "^4.0.1"
+  }
+}

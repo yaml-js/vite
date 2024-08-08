@@ -1,0 +1,131 @@
+name: Build
+on:
+  push:
+    branches: [ "**", "!main" ]
+    paths-ignore:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'LICENSE'
+      - '.gitignore'
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'CODE_OF_CONDUCT.md'
+      - 'LICENSE'
+      - '.gitignore'
+
+jobs:
+  initialize:
+    name: Initialize CI environment
+    runs-on: ubuntu-latest
+    steps:
+    - name: Enable Corepack
+      run: corepack enable
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    - name: Install dependencies
+      run: yarn install
+    - uses: actions/cache/save@v4
+      with:
+        path: ./*
+        key: ${{ github.sha }}-workspace
+
+  build:
+    needs: [initialize]
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Enable Corepack
+      run: corepack enable
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    - uses: actions/cache/restore@v4
+      with:
+        path: ./*
+        key: ${{ github.sha }}-workspace
+    - name: Build packages
+      run: yarn build
+    - uses: actions/cache/save@v4
+      id: build-cache
+      with:
+        path: ./*
+        key: ${{ github.sha }}-build
+
+  unit-tests:
+    needs: [build]
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: Enable Corepack
+      run: corepack enable
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    - uses: actions/cache/restore@v4
+      with:
+        path: ./*
+        key: ${{ github.sha }}-build
+    - name: Run unit tests
+      run: yarn test
+    - uses: actions/cache/save@v4
+      id: build-cache
+      with:
+        path: ./*
+        key: ${{ github.sha }}-final
+
+  coverage-reports:
+    permissions:
+      pull-requests: write
+    needs: [unit-tests]
+    if: ${{ github.event_name == 'pull_request' }}
+    name: Code Coverage Reports
+    runs-on: ubuntu-latest
+    steps:
+    - name: Enable Corepack
+      run: corepack enable
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    - uses: actions/cache/restore@v4
+      with:
+        path: ./*
+        key: ${{ github.sha }}-final
+    - name: Code Coverage Report
+      uses: irongut/CodeCoverageSummary@v1.3.0
+      with:
+        filename: /**/packages/*/build/reports/coverage/cobertura-coverage.xml
+        badge: true
+        fail_below_min: true
+        format: markdown
+        hide_branch_rate: false
+        hide_complexity: true
+        indicators: true
+        output: both
+        thresholds: '60 80'
+    - name: Add Code Coverage Report on PR Comment
+      uses: marocchino/sticky-pull-request-comment@v2.9.0
+      with:
+        recreate: true
+        path: code-coverage-results.md
+    - name: Generate Converage and Test Badges
+      uses: gaelgirodon/ci-badges-action@v1.5.0
+      with:
+        gist-id: 5a72d5db890cc90ad001b05d6ff71f73
+        token: ${{ secrets.GIST_TOKEN }}

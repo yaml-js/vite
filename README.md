@@ -1,4 +1,5 @@
 # Vite YAML Plugin
+[![Build](https://github.com/viteyaml/viteyaml-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/viteyaml/viteyaml-plugin/actions/workflows/build.yml) [![CodeQL](https://github.com/viteyaml/viteyaml-plugin/actions/workflows/codeql.yml/badge.svg)](https://github.com/viteyaml/viteyaml-plugin/actions/workflows/codeql.yml) ![Converage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/pedromvgomes/5a72d5db890cc90ad001b05d6ff71f73/raw/viteyaml-plugin-cobertura-coverage.json) ![Unit Tests](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/pedromvgomes/5a72d5db890cc90ad001b05d6ff71f73/raw/viteyaml-plugin-junit-tests.json) [![Downloads](https://img.shields.io/npm/d18m/%40viteyaml%2Fplugin)](https://www.npmjs.com/package/@viteyaml/plugin)
 
 Enhance your Vite-powered projects with seamless YAML integration using the Vite YAML Plugin. This lightweight and efficient plugin empowers developers to utilize YAML files directly within their Vite setups. By transforming YAML content into accessible JavaScript objects, the Vite YAML Plugin simplifies the management and utilization of configuration data, translations, or any structured content stored in YAML format.
 
@@ -83,6 +84,10 @@ This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file
 * [Vite](https://vitejs.dev/) - The blazing fast frontend tooling.
 * [YAML](https://yaml.org/) - A human-friendly data serialization standard.
 Contact
+
+## Contacts for assistance
+- [@pedromvgomes](https://github.com/pedromvgomes) - **Pedro Gomes**, Project Founder
+
 
 If you have any questions, suggestions, or feedback, feel free to open an issue.
 
