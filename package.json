@@ -23,6 +23,7 @@
     "test": "yarn workspaces foreach -Apt run test",
     "check-types": "yarn workspaces foreach -Apt run check-types",
     "check-publish": "yarn workspaces foreach -Apt run check-publish",
+    "publish": "yarn workspaces foreach -Apt run publish",
     "pre-commit": "yarn check-types && yarn test && yarn check-publish && yarn lint-staged"
   }
 }

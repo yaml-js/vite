@@ -25,6 +25,7 @@
     "test": "jest --collect-coverage",
     "check-types": "tsc",
     "check-publish": "npm publish --dry-run",
+    "publish": "npm publish",
     "build": "yarn check-types && vite build"
   },
 

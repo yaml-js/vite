@@ -2,30 +2,94 @@ name: Publish
 on:
   push:
     tags:
-      - v**
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  build:
+  initialize:
+    name: Initialize CI environment
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 22.x ]
     steps:
     - name: Enable Corepack
       run: corepack enable
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
-    - name: Extract tag name
-      id: tag
-      uses: actions/github-script@0.2.0
+        node-version: 22.x
+    - uses: actions/cache/restore@v4
+      id: restore-cache-workspace
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          return context.payload.ref.replace(/\/refs\/tags\//, '');
-    - name: Echo
-      run: echo ${{ steps.tag.outputs.result }}
+        path: ./*
+        key: ${{ github.sha }}-workspace
+    - name: Install dependencies
+      if: steps.restore-cache-workspace.outputs.cache-hit != 'true'
+      run: yarn install
+    - uses: actions/cache/save@v4
+      if: steps.restore-cache-workspace.outputs.cache-hit != 'true'
+      with:
+        path: ./*
+        key: ${{ github.sha }}-workspace
+
+  build:
+    needs: [initialize]
+    name: Build Packages
+    runs-on: ubuntu-latest
+    steps:
+    - name: Enable Corepack
+      run: corepack enable
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    - uses: actions/cache/restore@v4
+      with:
+        id: restore-cache-build
+        path: ./*
+        key: ${{ github.sha }}-build
+    - uses: actions/cache/restore@v4
+      if: steps.restore-cache-build.outputs.cache-hit != 'true'
+      with:
+        path: ./*
+        key: ${{ github.sha }}-workspace
+    - name: Build Packages
+      if: steps.restore-cache-build.outputs.cache-hit != 'true'
+      run: yarn build
+    - uses: actions/cache/save@v4
+      if: steps.restore-cache-build.outputs.cache-hit != 'true'
+      with:
+        path: ./*
+        key: ${{ github.sha }}-build
+
+  publish:
+    needs: [build]
+    name: Publish Packages
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Enable Corepack
+      run: corepack enable
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    - uses: actions/cache/restore@v4
+      id: restore-cache-build
+      with:
+        path: ./*
+        key: ${{ github.sha }}-build
+    - name: Bump Version of package.json
+      uses: ramonpaolo/bump-version@v2.3.1
+      with:
+        tag: ${{ github.ref_name }}
+        commit: false
+        path: ./packages/vite-plugin/package.json
+    - name: Publish Packages
+      run: yarn publish
+      env:
+        NPMJS_TOKEN: ${{ secrets.NPMJS_TOKEN }}
