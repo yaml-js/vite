@@ -85,6 +85,10 @@ This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file
 * [YAML](https://yaml.org/) - A human-friendly data serialization standard.
 Contact
 
+## Contacts for assistance
+- [@pedromvgomes](https://github.com/pedromvgomes) - **Pedro Gomes**, Project Founder
+
+
 If you have any questions, suggestions, or feedback, feel free to open an issue.
 
 
