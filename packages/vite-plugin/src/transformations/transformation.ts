@@ -1,3 +1,3 @@
 export interface Transformation {
-  execute(input: string): Promise<string>;
+  execute(input: string): string;
 }

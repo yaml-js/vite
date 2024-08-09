@@ -1,1 +1,2 @@
-export { VarsTransformation } from './transformations/varsTransformation';
+import yamlPlugin from "./plugin";
+export default yamlPlugin;

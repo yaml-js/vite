@@ -1,14 +1,14 @@
-import { VarsTransformation } from "../src/transformations/varsTransformation";
+import { ExpandVarsTransformation } from "../src/transformations/expandVarsTransformation";
 
 describe('Subject: varsTransformation', () => {
   describe('Scenario 01: Executing transformation when input has no variable placeholder', () => {
     it('Return should equals input', async () => {
 
       const input = 'Hello, World!';
-      const varsProvider = { get: jest.fn() };
-      const varsTransformation = new VarsTransformation(varsProvider);
+      const provider = { get: jest.fn() };
+      const transformation = new ExpandVarsTransformation(provider);
 
-      const result = await varsTransformation.execute(input);
+      const result = await transformation.execute(input);
       expect(result).toBe(input);
     })
   });

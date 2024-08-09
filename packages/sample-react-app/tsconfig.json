@@ -1,11 +1,7 @@
 {
-  "compilerOptions": {
-    "types": ["vite/client", "@viteyaml/yaml"],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "extends": "../../shared/tsconfig.react.json",
-  "include": ["src"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
-©

@@ -1,13 +1,12 @@
-import config from './configs/config.yaml'
+import config from './configs/app.yml'
 
-const App = () => {
-
-  console.log("Yaml file content: ", config)
+function App() {
+  console.log("config", config)
 
   return (
-    <div>
-      <h1>Sample React App buitl with Vite and using Yaml files</h1>
-    </div>
+      <div>
+        <h1>React App with Yaml Support</h1>
+      </div>
   )
 }
 
