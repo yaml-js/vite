@@ -23,6 +23,6 @@ Please delete options that are not relevant.
 - [ ] I have performed a self-review of my code
 - [ ] I have read the **CONTRIBUTING** document.
 - [ ] My code follows the code style of this project.
-- [ ] I have updated the documentation accordingly.
+- [ ] I have updated the documentation as needed.
 - [ ] I have added tests to cover my changes.
 - [ ] All new and existing tests passed.
