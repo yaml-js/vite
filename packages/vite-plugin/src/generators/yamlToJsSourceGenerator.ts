@@ -1,5 +1,5 @@
-import { Transformation } from './transformation';
-import ymlParser from 'yaml';
+import { Generator } from './generator';
+import { parse } from 'yaml'
 
 const generateSourceCode = (object: any): string => {
   const json = JSON.stringify(object, null, 2);
@@ -11,9 +11,9 @@ const generateSourceCode = (object: any): string => {
   return lines.join('\n');
 }
 
-export class YamlToJsTransformation implements Transformation {
-  public execute(input: string): string {
-    const object = ymlParser.parse(input, { prettyErrors: true });
+export class YamlToJsSourceGenerator implements Generator {
+  public generate(input: string): string {
+    const object = parse(input, { prettyErrors: true });
     return generateSourceCode(object);
   }
 }

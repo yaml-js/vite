@@ -1990,7 +1990,7 @@ __metadata:
     "@types/jest": "npm:^29.5.12"
     "@types/node": "npm:^22.1.0"
     "@types/yaml": "npm:^1.9.7"
-    "@viteyaml/types": "workspace:^"
+    "@viteyaml/yaml-types": "workspace:^"
     eslint: "npm:^9.8.0"
     eslint-config-prettier: "npm:^9.1.0"
     jest: "npm:^29.7.0"
@@ -2010,9 +2010,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@viteyaml/types@workspace:^, @viteyaml/types@workspace:packages/types":
+"@viteyaml/yaml-types@workspace:^, @viteyaml/yaml-types@workspace:packages/yaml-types":
   version: 0.0.0-use.local
-  resolution: "@viteyaml/types@workspace:packages/types"
+  resolution: "@viteyaml/yaml-types@workspace:packages/yaml-types"
   dependencies:
     "@types/eslint": "npm:^9.6.0"
     eslint: "npm:^9.8.0"

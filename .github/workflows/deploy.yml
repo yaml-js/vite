@@ -90,6 +90,6 @@ jobs:
         commit: false
         path: ./packages/vite-plugin/package.json
     - name: Publish Packages
-      run: yarn publish
+      run: yarn deploy
       env:
         NPMJS_TOKEN: ${{ secrets.NPMJS_TOKEN }}

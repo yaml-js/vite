@@ -23,9 +23,8 @@
     "lint": "eslint -c ../../shared/eslint.config.js",
     "format": "prettier --config ../../shared/prettier.config 'src/**/*.ts' --write",
     "test": "jest --collect-coverage",
-    "check-publish": "npm publish --dry-run",
-    "publish": "npm publish",
-    "build": "yarn tsup --config ./build.config.ts && cp src/types.d.ts dist/viteyaml.yaml.d.ts"
+    "deploy": "npm publish",
+    "build": "yarn tsup --config ./build.config.ts"
   },
   "devDependencies": {
     "@rollup/pluginutils": "^5.1.0",
@@ -51,7 +50,7 @@
     "vite": "^5.3.5"
   },
   "dependencies": {
-    "@viteyaml/types": "workspace:^",
+    "@viteyaml/yaml-types": "workspace:^",
     "yaml": "^2.5.0"
   }
 }

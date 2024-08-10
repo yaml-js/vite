@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["vite/client", "@viteyaml/types"],
+    "types": ["vite/client", "@viteyaml/yaml-types"],
     "target": "ES2022",
     "lib": ["ES2023"],
     "module": "ESNext",
