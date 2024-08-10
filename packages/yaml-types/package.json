@@ -16,7 +16,7 @@
     "lint": "eslint -c ../../shared/eslint.config.js",
     "format": "prettier --config ../../shared/prettier.config 'src/**/*.ts' --write",
     "test": "exit 0",
-    "deploy": "npm publish",
+    "deploy": "npm publish --access=public",
     "build": "exit 0"
   },
   "devDependencies": {
