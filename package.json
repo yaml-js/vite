@@ -21,7 +21,7 @@
     "lint": "yarn workspaces foreach -Apt run lint",
     "build": "yarn workspaces foreach -At --topological-dev run build",
     "test": "yarn workspaces foreach -Apt run test",
-    "deploy": "yarn workspaces foreach -Apt run publish",
+    "deploy": "yarn workspaces foreach -Apt run deploy",
     "pre-commit": "yarn lint-staged && yarn build && yarn test"
   }
 }
