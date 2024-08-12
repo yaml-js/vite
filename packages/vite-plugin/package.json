@@ -30,7 +30,7 @@
     "@rollup/pluginutils": "^5.1.0",
     "@types/eslint": "^9.6.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^22.1.0",
+    "@types/node": "^22.2.0",
     "@types/yaml": "^1.9.7",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.1.0",
