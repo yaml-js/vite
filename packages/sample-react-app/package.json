@@ -19,7 +19,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
-    "@viteyaml/plugin": "workspace:^",
+    "@yaml-js/vite": "workspace:^",
     "eslint": "^9.8.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc-fb9a90fa48-20240614",
     "eslint-plugin-react-refresh": "^0.4.9",

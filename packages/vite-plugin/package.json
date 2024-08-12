@@ -1,22 +1,19 @@
 {
   "packageManager": "yarn@4.4.0",
-  "name": "@viteyaml/plugin",
+  "name": "@yaml-js/vite",
   "version": "0.1.0",
   "type": "module",
-  "types": "./dist/viteyaml.plugin.d.ts",
-  "main": "./dist/viteyaml.plugin.js",
-  "module": "./dist/viteyaml.plugin.js",
+  "types": "./dist/yaml-js.vite.d.ts",
+  "main": "./dist/yaml-js.vite.js",
+  "module": "./dist/viteyaml-jsyaml.vite.js",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/viteyaml.plugin.js",
-      "require": "./dist/viteyaml.plugin.cjs",
-      "types": "./dist/viteyaml.plugin.d.ts"
-    },
-    "./yaml": {
-      "types": "./dist/viteyaml.yaml.d.ts"
+      "import": "./dist/yaml-js.vite.js",
+      "require": "./dist/yaml-js.vite.cjs",
+      "types": "./dist/yaml-js.vite.d.ts"
     }
   },
   "scripts": {
@@ -50,7 +47,6 @@
     "vite": "^5.3.5"
   },
   "dependencies": {
-    "@viteyaml/yaml-types": "workspace:^",
     "yaml": "^2.5.0"
   }
 }
