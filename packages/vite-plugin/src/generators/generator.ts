@@ -1,3 +1,3 @@
 export interface Generator {
-  generate(input: string): string;
+  generate(input: string): string
 }

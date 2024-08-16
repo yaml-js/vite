@@ -1,0 +1,4 @@
+{
+    "jest.jestCommandLine": "jest --config ./config/jest.ts --",
+    "jest.rootPath": ".."
+}
