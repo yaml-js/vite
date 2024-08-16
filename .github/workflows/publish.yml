@@ -9,7 +9,6 @@ jobs:
   publish_packages:
     name: Publish Packages
     uses: yaml-js/.github/.github/workflows/jobs.publish.yml@main
-    secrets: inherit
     permissions:
       contents: write
     with:

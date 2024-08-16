@@ -22,7 +22,6 @@ jobs:
   publish_packages:
     name: Build
     uses: yaml-js/.github/.github/workflows/jobs.build.yml@main
-    secrets: inherit
     permissions:
       contents: write
       pull-requests: write
