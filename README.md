@@ -80,7 +80,6 @@ This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file
 * [Vite](https://vitejs.dev/) - The blazing fast frontend tooling.
 * [YAML](https://yaml.org/) - A human-friendly data serialization standard.
 * [yaml library](github.com/eemeli/yaml) - This fantastic library made our job easier by not having to build a YAML parser
-Contact
 
 ## Contacts for assistance
 - [@pedromvgomes](https://github.com/pedromvgomes) - **Pedro Gomes**, Project Founder
