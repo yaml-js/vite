@@ -982,7 +982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.9.0, @eslint/js@npm:^9.8.0":
+"@eslint/js@npm:9.9.0, @eslint/js@npm:^9.9.0":
   version: 9.9.0
   resolution: "@eslint/js@npm:9.9.0"
   checksum: 10c0/6ec9f1f0d576132444d6a5c66a8a08b0be9444e3ebb563fa6a6bebcf5299df3da7e454dc04c0fa601bb811197f00764b3a04430d8458cdb8e3a4677993d23f30
@@ -1820,7 +1820,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^22.1.0":
+"@types/node@npm:*, @types/node@npm:^22.3.0":
   version: 22.3.0
   resolution: "@types/node@npm:22.3.0"
   dependencies:
@@ -2054,7 +2054,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^19.2.2"
     "@yaml-js/config-editor": "npm:^0.1.4"
     husky: "npm:^9.1.4"
-    lint-staged: "npm:^15.2.8"
+    lint-staged: "npm:^15.2.9"
   languageName: unknown
   linkType: soft
 
@@ -2066,7 +2066,7 @@ __metadata:
     "@types/eslint": "npm:^9.6.0"
     "@types/eslint-config-prettier": "npm:^6.11.3"
     "@types/jest": "npm:^29.5.12"
-    "@types/node": "npm:^22.1.0"
+    "@types/node": "npm:^22.3.0"
     "@types/yaml": "npm:^1.9.7"
     "@yaml-js/config-eslint": "npm:^0.1.4"
     "@yaml-js/config-prettier": "npm:^0.1.4"
@@ -2083,7 +2083,7 @@ __metadata:
     tsup: "npm:^8.2.4"
     typescript: "npm:^5.5.4"
     typescript-eslint: "npm:^8.1.0"
-    vite: "npm:^5.4.0"
+    vite: "npm:^5.4.1"
     yaml: "npm:^2.5.0"
   peerDependencies:
     "@rollup/pluginutils": ^5.1.0
@@ -3272,7 +3272,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.8.0, eslint@npm:^9.9.0":
+"eslint@npm:^9.9.0":
   version: 9.9.0
   resolution: "eslint@npm:9.9.0"
   dependencies:
@@ -4834,7 +4834,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^15.2.8":
+"lint-staged@npm:^15.2.9":
   version: 15.2.9
   resolution: "lint-staged@npm:15.2.9"
   dependencies:
@@ -5937,20 +5937,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sample-react-app@workspace:packages/sample-react-app"
   dependencies:
-    "@eslint/js": "npm:^9.8.0"
+    "@eslint/js": "npm:^9.9.0"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-react-swc": "npm:^3.7.0"
     "@yaml-js/vite": "workspace:^"
-    eslint: "npm:^9.8.0"
+    eslint: "npm:^9.9.0"
     eslint-plugin-react-hooks: "npm:^5.1.0-rc-fb9a90fa48-20240614"
     eslint-plugin-react-refresh: "npm:^0.4.9"
     globals: "npm:^15.9.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     typescript: "npm:^5.5.4"
-    typescript-eslint: "npm:^8.0.1"
-    vite: "npm:^5.4.0"
+    typescript-eslint: "npm:^8.1.0"
+    vite: "npm:^5.4.1"
   languageName: unknown
   linkType: soft
 
@@ -6553,7 +6553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.0.1, typescript-eslint@npm:^8.1.0":
+"typescript-eslint@npm:^8.1.0":
   version: 8.1.0
   resolution: "typescript-eslint@npm:8.1.0"
   dependencies:
@@ -6669,7 +6669,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.4.0":
+"vite@npm:^5.4.1":
   version: 5.4.1
   resolution: "vite@npm:5.4.1"
   dependencies:
