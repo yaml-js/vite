@@ -22,11 +22,10 @@ jobs:
   publish_packages:
     name: Build
     uses: yaml-js/.github/.github/workflows/jobs.build.yml@main
+    secrets: inherit
     permissions:
       contents: write
       pull-requests: write
     with:
       KEY: ${{ github.sha }}
       EVENT: ${{ github.event_name }}
-    secrets:
-      GIST_TOKEN: ${{ secrets.GIST_TOKEN }}

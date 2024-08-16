@@ -9,10 +9,9 @@ jobs:
   publish_packages:
     name: Publish Packages
     uses: yaml-js/.github/.github/workflows/jobs.publish.yml@main
+    secrets: inherit
     permissions:
       contents: write
     with:
       KEY: ${{ github.sha }}
       REF_NAME: ${{ github.ref_name }}
-    secrets:
-      GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
