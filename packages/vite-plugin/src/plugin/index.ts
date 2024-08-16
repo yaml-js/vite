@@ -20,7 +20,6 @@ const factory: PluginFactory = (options?: PluginOptions): Plugin => {
   return {
     name: 'yam-js:vite-transformer',
     async transform(code: string, id: string) {
-
       if (!FILE_EXTENSION_PATTERN.test(id) || (filesFilter && !filesFilter(id))) {
         return null
       }
