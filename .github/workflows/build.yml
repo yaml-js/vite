@@ -25,6 +25,7 @@ jobs:
     secrets: inherit
     permissions:
       contents: write
+      pull-requests: write
     with:
       KEY: ${{ github.sha }}
       EVENT: ${{ github.event_name }}
