@@ -28,3 +28,6 @@ jobs:
     with:
       KEY: ${{ github.sha }}
       EVENT: ${{ github.event_name }}
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
