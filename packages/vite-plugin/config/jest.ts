@@ -1,7 +1,10 @@
-module.exports = {
+export default {
+  rootDir: "../",
+  displayName: '@viteyaml/plugin',
+  coveragePathIgnorePatterns: ['src/viteyaml.plugin.ts'],
   clearMocks: true,
   collectCoverage: false,
-  collectCoverageFrom: ['./src/**/*.ts'],
+  collectCoverageFrom: ['src/**/*.ts'],
   coverageDirectory: 'build/reports/coverage',
   coverageProvider: 'babel',
   coverageReporters: ['text', 'cobertura'],
@@ -24,9 +27,6 @@ module.exports = {
   ],
   transform: { '^.+\\.ts?$': 'ts-jest' },
   testEnvironment: 'node',
-  testMatch: ['**/tests/**/*.test.[jt]s?(x)'],
-  testPathIgnorePatterns: ['/node_modules/'],
-  moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1',
-  },
+  testMatch: ['<rootDir>/tests/**/*.test.[jt]s?(x)'],
+  testPathIgnorePatterns: ['node_modules'],
 };

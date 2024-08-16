@@ -1,0 +1,17 @@
+{
+    "folders": [
+        {
+            "path": ".."
+        },
+		{
+			"name": "sample-react-app",
+			"path": "../packages/sample-react-app"
+		},
+		{
+			"name": "vite-plugin",
+			"path": "../packages/vite-plugin"
+		}
+	],
+	"settings": {
+	}
+}

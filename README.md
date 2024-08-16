@@ -17,9 +17,9 @@ Whether you're managing configuration settings, language translations, or other 
 To install the Vite YAML Plugin, you can use npm or yarn:
 
 ```bash
-npm install vite-yaml-plugin
+npm install --save-dev @yaml-js/vite
 or
-yarn add vite-yaml-plugin
+yarn add -D @yaml-js/vite
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ Integrate the Vite YAML Plugin into your Vite configuration as follows:
 ```javascript
 // vite.config.js
 import { defineConfig } from 'vite';
-import yaml from 'vite-yaml-plugin';
+import yaml from '@yaml-js/vite'
 
 export default defineConfig({
   plugins: [yaml()],
@@ -42,20 +42,16 @@ import config from './config.yaml';
 
 console.log(config);
 ```
-## Configuration Options
-The plugin can be customized with various options. Here’s an example of how to pass options to the plugin:
-```javascript
-// vite.config.js
-import { defineConfig } from 'vite';
-import yaml from 'vite-yaml-plugin';
 
-export default defineConfig({
-  plugins: [
-    yaml({
-      // Add your custom options here
-    }),
-  ],
-});
+## Typescript Projects
+This package also includes the needed types to allow importing *.yaml/*.yml files on your typescript projects, for that please update your tsconfig.json file and add the types by adding '@yaml-js/types'
+
+```json
+{
+  "compilerOptions": {
+    "types": ["vite/client", "@yaml-js/types"]
+  }
+}
 ```
 
 ## Contributing
@@ -63,7 +59,7 @@ export default defineConfig({
 We welcome contributions to the Vite YAML Plugin! To get started:
 
 1. Fork the repository.
-2. Clone your fork: `git clone https://github.com/your-username/vite-yaml-plugin.git`
+2. Clone your fork: `git clone https://github.com/yaml-js/vite.git`
 3. Create a new branch: `git checkout -b feature-name`
 4. Make your changes.
 5. Ensure your commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
@@ -91,8 +87,3 @@ Contact
 
 
 If you have any questions, suggestions, or feedback, feel free to open an issue.
-
-
-
-
-

@@ -2,7 +2,7 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig({
   name: "@viteyaml/plugin",
-  entry: ['src/viteyaml.plugin.ts'],
+  entry: ['src/yaml-js.vite.ts'],
   format: ['esm', 'cjs'],
   target: 'node22',
   dts: true,
