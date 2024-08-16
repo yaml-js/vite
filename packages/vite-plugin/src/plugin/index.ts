@@ -12,7 +12,7 @@ const FILE_EXTENSION_PATTERN = /\.ya?ml$/
 export type PluginFactory = (options?: PluginOptions) => Plugin
 
 const factory: PluginFactory = (options?: PluginOptions): Plugin => {
-  let filesFilter: ((id: string | unknown) => boolean) | null = null
+  let filesFilter: ((id: string | undefined) => boolean) | null = null
   if (options) {
     filesFilter = createFilter(options.include, options.exclude)
   }
