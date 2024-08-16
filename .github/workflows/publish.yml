@@ -15,5 +15,4 @@ jobs:
       KEY: ${{ github.sha }}
       REF_NAME: ${{ github.ref_name }}
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
