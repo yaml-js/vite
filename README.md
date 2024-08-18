@@ -1,14 +1,11 @@
 # Vite YAML Plugin
+
 ![NPM License](https://img.shields.io/npm/l/%40yaml-js%2Ftypes)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yaml-js/vite/build.yml)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yaml-js/vite/codeql.yml)
-![NPM Downloads](https://img.shields.io/npm/dw/%40yaml-js%2Fvite)
-![Sonar Violations](https://img.shields.io/sonar/critical_violations/yaml-js_vite?server=https%3A%2F%2Fsonarcloud.io)
-![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/yaml-js_vite?server=https%3A%2F%2Fsonarcloud.io)
-![Converage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/pedromvgomes/5a72d5db890cc90ad001b05d6ff71f73/raw/yaml-js-vite-cobertura-coverage.json)
-![Unit Tests](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/pedromvgomes/5a72d5db890cc90ad001b05d6ff71f73/raw/yaml-js-vite-junit-tests.json)
+![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/org.yaml-js.vite-plugin?server=https%3A%2F%2Fsonarcloud.io)
+![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/org.yaml-js.vite-plugin?server=https%3A%2F%2Fsonarcloud.io)
+![Sonar Coverage](https://img.shields.io/sonar/coverage/org.yaml-js.vite-plugin?server=https%3A%2F%2Fsonarcloud.io)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/yaml-js/vite)
-
 
 Enhance your Vite-powered projects with seamless YAML integration using the Vite YAML Plugin. This lightweight and efficient plugin empowers developers to utilize YAML files directly within their Vite setups. By transforming YAML content into accessible JavaScript objects, the Vite YAML Plugin simplifies the management and utilization of configuration data, translations, or any structured content stored in YAML format.
 
