@@ -7,7 +7,7 @@ export default {
   collectCoverageFrom: ['src/**/*.ts'],
   coverageDirectory: 'build/reports/coverage',
   coverageProvider: 'babel',
-  coverageReporters: ['text', 'cobertura'],
+  coverageReporters: ['text', 'cobertura', 'lcov'],
   coverageThreshold: {
     global: {
       lines: 80,

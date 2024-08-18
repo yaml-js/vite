@@ -1,7 +1,8 @@
 {
   "packageManager": "yarn@4.4.0",
   "name": "@yaml-js/vite",
-  "version": "0.1.0",
+  "description": "Enhance your Vite-powered projects with seamless YAML integration using the Vite YAML Plugin. This lightweight and efficient plugin empowers developers to utilize YAML files directly within their Vite setups.",
+  "version": "${FROM TAG}",
   "type": "module",
   "types": "./dist/yaml-js.vite.d.ts",
   "main": "./dist/yaml-js.vite.js",
@@ -35,7 +36,7 @@
   "scripts": {
     "lint": "eslint -c ./config/eslint.cjs 'src/**/*.ts' 'tests/**/*.ts'",
     "format": "prettier --config ./config/prettier.cjs 'src/**/*.ts' --write",
-    "test": "jest --config ./config/jest.ts --collect-coverage",
+    "test": "jest --config ./config/jest.ts --collect-coverage --coverage",
     "deploy": "npm publish --access=public",
     "build": "yarn tsup --config ./config/build.ts"
   },
