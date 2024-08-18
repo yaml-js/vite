@@ -9,7 +9,8 @@
   "module": "./dist/yaml-js.vite.js",
   "files": [
     "dist",
-    "./LICENSE"
+    "./LICENSE",
+    "./README.md"
   ],
   "keywords": [
     "yaml",
