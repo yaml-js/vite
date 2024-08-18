@@ -38,7 +38,7 @@
     "lint": "eslint -c ./config/eslint.cjs 'src/**/*.ts' 'tests/**/*.ts'",
     "format": "prettier --config ./config/prettier.cjs 'src/**/*.ts' --write",
     "test": "jest --config ./config/jest.ts --collect-coverage --coverage",
-    "deploy": "cp $(readlink ./README.md) ./README.md && npm publish --access=public",
+    "deploy": "mp $(readlink ./README.md) ./README.md && npm publish --access=public",
     "build": "yarn tsup --config ./config/build.ts"
   },
   "devDependencies": {
