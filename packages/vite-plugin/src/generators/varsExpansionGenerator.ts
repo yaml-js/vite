@@ -5,7 +5,7 @@ export interface VarResolver {
 }
 
 // Pattern to match ${VAR_NAME} or ${VAR_NAME:DEFAULT_VALUE}
-const pattern = /\$\{(?<VAR>[A-Za-z0-9_]+)(?::(?<DEFAULT>[^\}]*))?\}/g
+const pattern = /\$\{(?<VAR>[A-Za-z0-9_]+)(?::(?<DEFAULT>[^}]*))?\}/g
 
 export class VarsExpansionGenerator implements Generator {
   public constructor(private readonly varsProvider: VarResolver) {}
