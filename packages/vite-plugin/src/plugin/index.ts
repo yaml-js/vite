@@ -30,11 +30,10 @@ const factory: PluginFactory = (options?: PluginOptions): Plugin<any> => {
   return {
     name: 'yam-js:vite-plugin',
 
-    async configResolved({ root = process.cwd(), envDir, command }): Promise<void> {
+    async configResolved({ root = process.cwd(), command }): Promise<void> {
       const resolvedRoot = resolve(root)
-      envDir = envDir ? resolve(resolvedRoot, envDir) : resolvedRoot
       const includeLocal = command === 'serve'
-      const builder = new ConfigurationBuilder(root, options?.config?.folder, options?.config?.file)
+      const builder = new ConfigurationBuilder(resolvedRoot, options?.config?.folder, options?.config?.file)
       appConfig = await builder.build(includeLocal)
     },
 

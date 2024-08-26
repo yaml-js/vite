@@ -1,6 +1,5 @@
 #!/bin/bash
 
-shopt -s globstar
 shopt -s nullglob
 
 if [ "$#" -lt 2 ]; then

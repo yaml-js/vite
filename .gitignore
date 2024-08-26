@@ -25,6 +25,7 @@ lerna-debug.log*
 node_modules
 build
 dist
+lib
 dist.browser
 dist-ssr
 *.local

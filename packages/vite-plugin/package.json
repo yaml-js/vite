@@ -3,10 +3,23 @@
   "name": "@yaml-js/vite",
   "description": "Enhance your Vite-powered projects with seamless YAML integration using the Vite YAML Plugin. This lightweight and efficient plugin empowers developers to utilize YAML files directly within their Vite setups.",
   "version": "${FROM TAG}",
-  "type": "module",
-  "types": "./dist/yaml-js.vite.d.ts",
-  "main": "./dist/yaml-js.vite.js",
-  "module": "./dist/yaml-js.vite.js",
+  "types": "./lib/yaml-js.vite.d.ts",
+  "main": "./lib/yaml-js.vite.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/yaml-js.vite.d.mts",
+        "default": "./lib/yaml-js.vite.mjs"
+      },
+      "require": {
+        "types": "./lib/yaml-js.vite.d.ts",
+        "default": "./lib/yaml-js.vite.js"
+      }
+    },
+    "./client": {
+      "types": "./src/client.d.ts"
+    }
+  },
   "files": [
     "src",
     "dist",
@@ -28,16 +41,6 @@
     "url": "https://github.com/yaml-js/vite/issues"
   },
   "homepage": "https://yaml-js.org",
-  "exports": {
-    ".": {
-      "types": "./dist/yaml-js.vite.d.ts",
-      "import": "./dist/yaml-js.vite.js",
-      "require": "./dist/yaml-js.vite.cjs"
-    },
-    "./client": {
-      "types": "./src/client.d.ts"
-    }
-  },
   "scripts": {
     "lint": "eslint -c ./config/eslint.cjs 'src/**/*.ts' 'tests/**/*.ts'",
     "format": "prettier --config ./config/prettier.cjs 'src/**/*.ts' --write",
