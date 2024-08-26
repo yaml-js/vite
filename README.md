@@ -79,7 +79,6 @@ console.log($application.config.myProperty.otherProperty);
 **Custom Configuration**
 If you need to customize configuration path or file name, you can do so using the plugin’s configuration options:
 
-
 ```javascript
 // vite.config.js
 import { defineConfig } from 'vite';
@@ -95,12 +94,6 @@ export default defineConfig({
     })],
 });
 ```
-
-yaml({
-  configFileName: 'custom-name.yaml',
-  configFolders: ['custom-config', 'settings']
-})
-
 
 ## Typescript Projects
 This package also includes the needed types to allow importing *.yaml/*.yml files on your typescript projects, for that please update your tsconfig.json file and add the types by adding '@yaml-js/types'
