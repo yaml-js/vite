@@ -1,0 +1,58 @@
+{
+  "configurations": [
+    {
+      "name": "Build Sample React App",
+      "command": "yarn build",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/playground/sample-react-app",
+      "outFiles": [
+        "${workspaceFolder}/**/*.(m|c|)js",
+        "${workspaceFolder}/**/*.(m|c|)ts",
+        "**/node_modules/@yaml-js/**/*.(m|c|)js",
+        "**/node_modules/@yaml-js/**/*.ts",
+        "!**/node_modules/**",
+      ]
+    },
+    {
+      "name": "Run Sample React App",
+      "command": "yarn dev",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/playground/sample-react-app",
+      "outFiles": [
+        "${workspaceFolder}/**/*.(m|c|)js",
+        "${workspaceFolder}/**/*.(m|c|)ts",
+        "**/node_modules/@yaml-js/**/*.(m|c|)js",
+        "**/node_modules/@yaml-js/**/*.ts",
+        "!**/node_modules/**",
+      ]
+    },
+    {
+      "name": "Build Configuration By Env React App",
+      "command": "yarn build",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/playground/configuration-by-env-react-app",
+      "outFiles": [
+        "${workspaceFolder}/**/*.(m|c|)js",
+        "${workspaceFolder}/**/*.(m|c|)ts",
+        "**/node_modules/@yaml-js/**/*.(m|c|)js",
+        "**/node_modules/@yaml-js/**/*.ts",
+        "!**/node_modules/**",
+      ]
+    },
+    {
+      "name": "Debug Terminal",
+      "request": "launch",
+      "type": "node-terminal",
+      "outFiles": [
+        "${workspaceFolder}/**/*.(m|c|)js",
+        "${workspaceFolder}/**/*.(m|c|)ts",
+        "**/node_modules/@yaml-js/**/*.(m|c|)js",
+        "**/node_modules/@yaml-js/**/*.ts",
+        "!**/node_modules/**",
+      ]
+    },
+  ]
+}

@@ -25,7 +25,7 @@ export default {
       },
     ],
   ],
-  transform: { '^.+\\.ts?$': 'ts-jest' },
+  transform: { '^.+\\.ts?$': [ "ts-jest", { "useESM": true } ] },
   testEnvironment: 'node',
   testMatch: ['<rootDir>/tests/**/*.test.[jt]s?(x)'],
   testPathIgnorePatterns: ['node_modules'],

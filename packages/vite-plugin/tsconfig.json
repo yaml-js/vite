@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "outDir": "dist",
+    "outDir": "lib",
     "target": "ES2022",
     "useDefineForClassFields": true,
+    "esModuleInterop": true,
     "module": "ESNext",
 
     "moduleResolution": "node",
@@ -20,5 +18,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*", ],
-  "exclude": ["dist", "__tests__", "**/node-modules"]
+  "exclude": ["lib", "__tests__", "**/node-modules"]
 }

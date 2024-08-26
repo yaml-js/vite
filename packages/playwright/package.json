@@ -1,0 +1,19 @@
+{
+  "name": "playwright-tests",
+  "packageManager": "yarn@4.4.0",
+  "devDependencies": {
+    "@playwright/test": "^1.46.1",
+    "@types/express": "^4.17.21",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^22.5.0",
+    "express": "^4.19.2"
+  },
+  "scripts": {
+    "build:plugin": "(cd ../vite-plugin && yarn build)",
+    "build:apps": "../../scripts/run.sh ../playground/* 'yarn build'",
+    "build": "yarn build:plugin && yarn build:apps",
+    "serve": "node server.js 3650 ../playground/*/dist",
+    "test": "yarn build && playwright test",
+    "test:coverage": "npm run test -- --coverage --watchAll=false"
+  }
+}

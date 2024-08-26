@@ -1,0 +1,3 @@
+db:
+  host: localhost.prod
+  port: 5432
