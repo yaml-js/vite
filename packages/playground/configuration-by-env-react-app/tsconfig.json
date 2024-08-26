@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["vite/client", "@yaml-js/types"],
+    "types": ["jest", "vite/client", "@yaml-js/types", "@yaml-js/vite/client"],
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],

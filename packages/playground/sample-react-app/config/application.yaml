@@ -1,0 +1,5 @@
+app_name: Sample React App (from config)
+build_user: ${USER}
+db:
+  host: localhost
+  port: 5432

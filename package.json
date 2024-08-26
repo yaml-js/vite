@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/playground/*",
+    "packages/playwright",
+    "packages/vite-plugin"
   ],
   "packageManager": "yarn@4.4.0",
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "husky": "^9.1.4",
+    "husky": "^9.1.5",
     "lint-staged": "^15.2.9"
   },
   "scripts": {
@@ -17,7 +19,7 @@
     "format": "yarn workspaces foreach -Apt run format",
     "lint": "yarn workspaces foreach -Apt run lint",
     "build": "yarn workspaces foreach -At --topological-dev run build",
-    "test": "yarn workspaces foreach -Apt run test",
+    "test": "./scripts/run.sh packages/vite-plugin packages/playwright packages/playground/* 'yarn test'",
     "deploy": "yarn workspaces foreach -Apt run deploy",
     "pre-commit": "yarn lint-staged && yarn build && yarn test"
   },

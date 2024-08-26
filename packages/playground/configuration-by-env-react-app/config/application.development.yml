@@ -1,0 +1,3 @@
+db:
+  host: localhost.dev
+  port: 5432

@@ -1,0 +1,5 @@
+app_name: Configuration by Env React App (from config)
+build_user: ${USER}
+db:
+  host: localhost.root
+  port: 5432

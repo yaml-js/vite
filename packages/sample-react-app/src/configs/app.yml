@@ -1,4 +1,0 @@
-api:
-  url: http://localhost:3000
-  version: v1
-  timeout: 5000
