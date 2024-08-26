@@ -72,6 +72,10 @@ By default, the plugin looks for YAML files named application.yaml in the follow
 
 These settings are accessible anywhere in your codebase via the $application.config.<properties> syntax.
 
+```javascript
+console.log($application.config.myProperty.otherProperty);
+```
+
 **Custom Configuration**
 If you need to customize configuration path or file name, you can do so using the plugin’s configuration options:
 
