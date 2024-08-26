@@ -5,6 +5,7 @@
 ![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/org.yaml-js.vite-plugin?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/org.yaml-js.vite-plugin?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Coverage](https://img.shields.io/sonar/coverage/org.yaml-js.vite-plugin?server=https%3A%2F%2Fsonarcloud.io)
+[![Known Vulnerabilities](https://snyk.io/test/github/yaml-js/vite/badge.svg)](https://snyk.io/test/github/yaml-js/vite/)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/yaml-js/vite)
 
 Enhance your Vite-powered projects with seamless YAML integration using the Vite YAML Plugin. This lightweight and efficient plugin empowers developers to utilize YAML files directly within their Vite setups. By transforming YAML content into accessible JavaScript objects, the Vite YAML Plugin simplifies the management and utilization of configuration data, translations, or any structured content stored in YAML format.
@@ -71,9 +72,12 @@ By default, the plugin looks for YAML files named application.yaml in the follow
 
 These settings are accessible anywhere in your codebase via the $application.config.<properties> syntax.
 
+```javascript
+console.log($application.config.myProperty.otherProperty);
+```
+
 **Custom Configuration**
 If you need to customize configuration path or file name, you can do so using the plugin’s configuration options:
-
 
 ```javascript
 // vite.config.js
@@ -90,12 +94,6 @@ export default defineConfig({
     })],
 });
 ```
-
-yaml({
-  configFileName: 'custom-name.yaml',
-  configFolders: ['custom-config', 'settings']
-})
-
 
 ## Typescript Projects
 This package also includes the needed types to allow importing *.yaml/*.yml files on your typescript projects, for that please update your tsconfig.json file and add the types by adding '@yaml-js/types'
