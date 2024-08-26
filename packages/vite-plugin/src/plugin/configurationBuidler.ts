@@ -5,6 +5,29 @@ import { readAsync } from '@yaml-js/envyaml'
 export class ConfigurationBuilder {
   public constructor(private root: string, private folder?: string, private fileName?: string) {}
 
+  private async probeFilesOnDir(searchDir: string, regex: RegExp): Promise<string[]> {
+    const matchedFiles: string[] = [];
+
+    try {
+      const dirStats = await fs.stat(searchDir);
+      if (dirStats.isDirectory()) {
+        const files = await fs.readdir(searchDir);
+        for (const file of files) {
+          const fullPath = path.resolve(searchDir, file);
+          const fileStats = await fs.stat(fullPath);
+          if (fileStats.isFile() && regex.test(file)) {
+            matchedFiles.push(fullPath);
+          }
+        }
+      }
+    } catch {
+      // ignore errors
+    }
+
+
+    return matchedFiles;
+  }
+
   private async probeFiles(dir: string, name: string): Promise<Record<string, string[]>> {
     const subDirs = ['', 'app-config', 'config', 'configuration', 'settings'];
     const configFilesByFolder: Record<string, string[]> = {};
@@ -13,26 +36,9 @@ export class ConfigurationBuilder {
 
     for (const subDir of subDirs) {
       const searchDir = path.resolve(dir, subDir);
-      try {
-        const dirStats = await fs.stat(searchDir);
-        if (dirStats.isDirectory()) {
-          const files = await fs.readdir(searchDir);
-          const matchedFiles: string[] = [];
-
-          for (const file of files) {
-            const fullPath = path.resolve(searchDir, file);
-            const fileStats = await fs.stat(fullPath);
-            if (fileStats.isFile() && regex.test(file)) {
-              matchedFiles.push(fullPath);
-            }
-          }
-
-          if (matchedFiles.length > 0) {
-            configFilesByFolder[subDir] = matchedFiles;
-          }
-        }
-      } catch {
-        // skip the directory
+      const matchedFiles = await this.probeFilesOnDir(searchDir, regex);
+      if (matchedFiles.length > 0) {
+        configFilesByFolder[subDir] = matchedFiles;
       }
     }
 
