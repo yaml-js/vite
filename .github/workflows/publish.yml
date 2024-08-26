@@ -15,3 +15,4 @@ jobs:
     with:
       KEY: ${{ github.sha }}
       REF_NAME: ${{ github.ref_name }}
+      BUILD_COMMAND: yarn build
